@@ -1,0 +1,308 @@
+
+@keyframes color {
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes color2 {
+    0% {
+        background-color: rgb(255, 255, 255);
+    }
+    70%{
+        background-color: rgb(0, 0, 0);
+    }
+    100%{
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@keyframes color3{
+    0%{
+        background-color:rgb(255, 77, 0) ;
+    }
+    70%{
+        background-color:rgb(255, 0, 208) ;
+    }
+    100%{
+        background-color:rgb(255, 77, 0) ;
+    }
+}
+
+@keyframes color4{
+    0%{
+        background-color:rgb(179, 255, 0) ;
+    }
+    70%{
+        background-color:rgb(0, 106, 255) ;
+    }
+    100%{
+        background-color:rgb(179, 255, 0) ;
+    }
+}
+
+@keyframes color5{
+    0%{
+        background-color:rgb(0, 106, 255) ;
+    }
+    70%{
+        background-color:rgb(179, 255, 0) ;
+    }
+    100%{
+        background-color:rgb(0, 106, 255) ;
+    }
+}
+
+@keyframes color6{
+    0%{
+        background-color:rgb(255, 0, 208) ;
+    }
+    70%{
+        background-color:rgb(255, 77, 0) ;
+    }
+    100%{
+        background-color:rgb(255, 0, 208) ;
+    }
+}
+
+
+body{
+    background-color: aqua;
+    animation-name: color2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+.box1{
+    background-color: rgb(255, 77, 0);
+    border: none;
+    position: relative;
+    top: 100px;
+    left:100px;  
+    animation-name: color, color3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+
+}
+
+
+.box2{
+    background-color: rgb(179, 255, 0);
+    border: none;
+    position: relative;
+    top: 100px;
+    left:100px;  
+    animation-name: color, color4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box3{
+    background-color: rgb(0, 106, 255);
+    border: none;
+    position: relative;
+    top: 100px;
+    left:100px;  
+    animation-name: color, color5;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box4{
+    background-color: rgb(255, 0, 208);
+    border: none;
+    position: relative;
+    top: 100px;
+    left:100px;  
+    animation-name: color, color6;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box5{
+    background-color: rgb(255, 0, 208);
+    border: none;
+    position: absolute;
+    top: 100px;
+    left:400px;  
+    animation-name: color, color6;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box6{
+    background-color: rgb(0, 106, 255);
+    border: none;
+    position: absolute;
+    top: 255px;
+    left:400px;  
+    animation-name: color, color5;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box7{
+    background-color: rgb(179, 255, 0);
+    border: none;
+    position: absolute;
+    top: 410px;
+    left:400px;  
+    animation-name: color, color4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box8{
+    background-color: rgb(255, 77, 0);
+    border: none;
+    position: absolute;
+    top: 565px;
+    left:400px;  
+    animation-name: color, color3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box9{
+    background-color: rgb(255, 77, 0);
+    border: none;
+    position: absolute;
+    top: 100px;
+    left:700px;  
+    animation-name: color, color3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+
+.box10{
+    background-color: rgb(179, 255, 0);
+    border: none;
+    position: absolute;
+    top: 255px;
+    left:700px;  
+    animation-name: color, color4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box11{
+    background-color: rgb(0, 106, 255);
+    border: none;
+    position: absolute;
+    top: 410px;
+    left:700px;  
+    animation-name: color, color5;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box12{
+    background-color: rgb(255, 0, 208);
+    border: none;
+    position: absolute;
+    top: 565px;
+    left:700px;  
+    animation-name: color, color6;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box13{
+    background-color: rgb(255, 0, 208);
+    border: none;
+    position: absolute;
+    top: 100px;
+    left:1000px;  
+    animation-name: color, color6;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box14{
+    background-color: rgb(0, 106, 255);
+    border: none;
+    position: absolute;
+    top: 255px;
+    left:1000px;  
+    animation-name: color, color5;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box15{
+    background-color: rgb(179, 255, 0);
+    border: none;
+    position: absolute;
+    top: 410px;
+    left:1000px;  
+    animation-name: color, color4;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
+
+.box16{
+    background-color: rgb(255, 77, 0);
+    border: none;
+    position: absolute;
+    top: 565px;
+    left:1000px;  
+    animation-name: color, color3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin: auto 10px;
+    width: 20vw;
+    height:20vh;
+}
