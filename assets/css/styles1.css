@@ -1,16 +1,8 @@
-.bodytext{
-    display: inline-block;
-    position: relative;
-    padding: 5cm;
-}
-
-.h3{
-    display: inline-block;
-    position: relative;
-    margin: 5%;
-}
-
-.image{
+.navigation{
+    background-color: aqua;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
     position: fixed;
-    align-items: center;
+    left: 0px;
+    top: 0px;
 }
