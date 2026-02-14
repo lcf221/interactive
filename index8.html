@@ -3,9 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Title</title>
+        <title>Favorite Book Genre</title>
+        <link rel="stylesheet" href="assets/css/styles-genre.css">
     </head>
     <body>
-        
+        <div class="genre-page">
+            <h1>What is your favorite book genre?</h1>
+            <form id="genre-form">
+                <label for="genre-select">Choose one:</label>
+                <select id="genre-select" name="genre" required>
+                    <option value="" selected disabled>-- Select a genre --</option>
+                    <option value="romance.html">Romance</option>
+                    <option value="mystery.html">Mystery</option>
+                    <option value="history.html">History</option>
+                    <option value="fiction.html">Fiction</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('genre-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const select = document.getElementById('genre-select');
+                const target = select.value;
+                if (target) {
+                    window.location.href = target;
+                }
+            });
+        </script>
     </body>
 </html>
+

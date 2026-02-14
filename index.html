@@ -4,26 +4,45 @@
         <title>Home page</title>
         <link rel="stylesheet" href="assets/css/styles1.css">
     </head>
-<body>
-        <p>I want the links to be in the books but have not figured that out yet.</p>
-    <ol>
+    <body>
+        <p>Click on different books on the shelves to visit each page.</p>
 
-    <img src="assets/images/bookshelf.png" alt"="image of a bookshelf">
-        
-    
-    <div class="navigation">
-    <a href="index2.html">Page One</a>
-    <a href="index3.html">Page Two</a>
-    <a href="index4.html">Page Three</a>
-    <a href="index5.html">Page Four</a>
-    <a href="index6.html">Page Five</a>
-    <a href="index7.html">Page Six</a>
-    <a href="index8.html">Page Seven</a>
-    <a href="index9.html">Page Eight</a>
-    <a href="index10.html">Page Nine</a>
-    </div>
+        <!-- First shelf image with 4 links -->
+        <img src="assets/images/Purple Bookshelf.jpg"
+             alt="Bookshelf row one"
+             usemap="#shelf1">
 
+        <!-- Second shelf image with 3 links -->
+        <img src="assets/images/Yellow Bookshelf.jpg"
+             alt="Bookshelf row two"
+             usemap="#shelf2">
 
+        <!-- Third shelf image with 3 links -->
+        <img src="assets/images/Red Bookshelf.jpg"
+             alt="Bookshelf row three"
+             usemap="#shelf3">
 
-</body>
+        <!-- Image maps define the clickable book areas (no JavaScript needed) -->
+        <map name="shelf1">
+            <!-- 4 equal vertical sections across 1024px-wide image -->
+            <area shape="rect" coords="0,0,256,431"   href="index2.html"  alt="Page One">
+            <area shape="rect" coords="256,0,512,431" href="index3.html"  alt="Page Two">
+            <area shape="rect" coords="512,0,768,431" href="index4.html"  alt="Page Three">
+            <area shape="rect" coords="768,0,1024,431" href="index5.html" alt="Page Four">
+        </map>
+
+        <map name="shelf2">
+            <!-- 3 equal sections -->
+            <area shape="rect" coords="0,0,341,470"   href="index6.html"  alt="Page Five">
+            <area shape="rect" coords="341,0,682,470" href="index7.html"  alt="Page Six">
+            <area shape="rect" coords="682,0,1024,470" href="index8.html" alt="Page Seven">
+        </map>
+
+        <map name="shelf3">
+            <!-- 3 equal sections -->
+            <area shape="rect" coords="0,0,341,432"   href="index9.html"   alt="Page Eight">
+            <area shape="rect" coords="341,0,682,432" href="index10.html"  alt="Page Nine">
+            <area shape="rect" coords="682,0,1024,432" href="romance.html" alt="Romance genre page">
+        </map>
+    </body>
 </html>
