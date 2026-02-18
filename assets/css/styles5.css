@@ -1,27 +1,116 @@
-.listhead{
-    font-weight: 700;
-    font-size: 20px;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.list{
-    font-style: italic;
-    text-transform: uppercase;
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
 }
 
-.h1{
-    text-align: center;
+/* FLEX CONTAINER */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
 }
 
-.h2{
-    text-align: center;
+/* VIDEO */
+.video-wrapper video {
+    width: 480px;
+    max-width: 45vw;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
 }
 
-.h3{
-    text-align: center;
-    letter-spacing: 7%;
+/* HOURGLASS WRAPPER */
+.hourglass-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.bodytext{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 150%;
+/* HOURGLASS CONTAINER */
+.hourglass {
+    position: relative;
+    width: 120px;
+    height: 240px;
+}
+
+/* GLASS OUTLINE */
+.hourglass .glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 240px;
+    border: 4px solid #ffd700;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ffd700;
+}
+
+/* TOP SAND */
+.hourglass .sand.top {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 112px;
+    height: 100px;
+    background: #ffd700;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
+    z-index: 1;
+}
+
+/* BOTTOM SAND */
+.hourglass .sand.bottom {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 112px;
+    height: 0;
+    background: #ffd700;
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
+    z-index: 1;
+}
+
+/* ANIMATION */
+.hourglass .sand.top,
+.hourglass .sand.bottom {
+    animation-name: sandFlow;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* GLOW */
+.hourglass .sand.top,
+.hourglass .sand.bottom,
+.hourglass .glass {
+    filter: drop-shadow(0 0 15px #ffd700);
+}
+
+/* KEYFRAMES */
+@keyframes sandFlow {
+    0% {
+        height: var(--start-height, 100px);
+    }
+    50% {
+        height: var(--mid-height, 0);
+    }
+    100% {
+        height: var(--start-height, 100px);
+    }
+}
+
+/* PAUSE ANIMATION WHEN HOVERING VIDEO */
+.video-wrapper video:hover ~ .hourglass-wrapper .sand {
+    animation-play-state: paused;
 }

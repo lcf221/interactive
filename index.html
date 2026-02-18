@@ -1,48 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Home page</title>
-        <link rel="stylesheet" href="assets/css/styles1.css">
-    </head>
-    <body>
-        <p>Click on different books on the shelves to visit each page.</p>
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="assets/css/styles1.css">
+</head>
 
-        <!-- First shelf image with 4 links -->
-        <img src="assets/images/Purple Bookshelf.jpg"
-             alt="Bookshelf row one"
-             usemap="#shelf1">
+<body>
 
-        <!-- Second shelf image with 3 links -->
-        <img src="assets/images/Yellow Bookshelf.jpg"
-             alt="Bookshelf row two"
-             usemap="#shelf2">
 
-        <!-- Third shelf image with 3 links -->
-        <img src="assets/images/Red Bookshelf.jpg"
-             alt="Bookshelf row three"
-             usemap="#shelf3">
+<!-- Purple Shelf -->
+<div class="shelf shelf-purple">
+    <img src="assets/images/Purple Bookshelf.jpg" alt="Bookshelf row one">
 
-        <!-- Image maps define the clickable book areas (no JavaScript needed) -->
-        <map name="shelf1">
-            <!-- 4 equal vertical sections across 1024px-wide image -->
-            <area shape="rect" coords="0,0,256,431"   href="index2.html"  alt="Page One">
-            <area shape="rect" coords="256,0,512,431" href="index3.html"  alt="Page Two">
-            <area shape="rect" coords="512,0,768,431" href="index4.html"  alt="Page Three">
-            <area shape="rect" coords="768,0,1024,431" href="index5.html" alt="Page Four">
-        </map>
+    <a href="index2.html" class="book book1">
+        <span class="spine-label">WELCOME</span>
+    </a>
 
-        <map name="shelf2">
-            <!-- 3 equal sections -->
-            <area shape="rect" coords="0,0,341,470"   href="index6.html"  alt="Page Five">
-            <area shape="rect" coords="341,0,682,470" href="index7.html"  alt="Page Six">
-            <area shape="rect" coords="682,0,1024,470" href="index8.html" alt="Page Seven">
-        </map>
+    <a href="index3.html" class="book book2">
+        <span class="spine-label">RECOMENDATIONS</span>
+    </a>
 
-        <map name="shelf3">
-            <!-- 3 equal sections -->
-            <area shape="rect" coords="0,0,341,432"   href="index9.html"   alt="Page Eight">
-            <area shape="rect" coords="341,0,682,432" href="index10.html"  alt="Page Nine">
-            <area shape="rect" coords="682,0,1024,432" href="romance.html" alt="Romance genre page">
-        </map>
-    </body>
+    <a href="index4.html" class="book book3">
+        <span class="spine-label">SCROLLING SHELVES</span>
+    </a>
+</div>
+
+<!-- Yellow Shelf -->
+<div class="shelf shelf-yellow">
+    <img src="assets/images/Yellow Bookshelf.jpg" alt="Bookshelf row two">
+
+    <a href="index5.html" class="book book4">
+        <span class="spine-label">TIME</span>
+    </a>
+
+    <a href="index6.html" class="book book5">
+        <span class="spine-label">Page 6</span>
+    </a>
+
+    <a href="index7.html" class="book book6">
+        <span class="spine-label">Page 7</span>
+    </a>
+</div>
+
+<!-- Red Shelf with clickable spines -->
+<div class="shelf shelf-red shelf-clickable">
+    <!-- Base shelf image -->
+    <!-- <img src="assets/images/Red Bookshelf.jpg" alt="Bookshelf row three"> -->
+
+    <!-- Spine overlays -->
+    <a href="index8.html" class="spine spine-1">
+        <img src="assets/images/spines/spine-1.jpg" alt="Spine 1">
+    </a>
+
+    <a href="index9.html" class="spine spine-2">
+        <img src="assets/images/spines/spine-2.jpg" alt="Spine 2">
+    </a>
+
+    <a href="index10.html" class="spine spine-3">
+        <img src="assets/images/spines/spine-3.jpg" alt="Spine 3">
+    </a>
+    <a href="index10.html" class="spine spine-4">
+        <img src="assets/images/spines/spine4.jpg" alt="Spine 4">
+    </a>
+    <a href="index10.html" class="spine spine-5">
+        <img src="assets/images/spines/spine5.jpg" alt="Spine 5">
+    </a>
+    <a href="index10.html" class="spine spine-6">
+        <img src="assets/images/spines/spine6.jpg" alt="Spine 6">
+    </a>
+    <a href="index10.html" class="spine spine-7">
+        <img src="assets/images/spines/spine7.jpg" alt="Spine 7">
+    </a>
+    <a href="index10.html" class="spine spine-8">
+        <img src="assets/images/spines/spine8.jpg" alt="Spine 8">
+    </a>
+    <a href="index10.html" class="spine spine-9">
+        <img src="assets/images/spines/spine9.jpg" alt="Spine 9">
+    </a>
+    <a href="index10.html" class="spine spine-10">
+        <img src="assets/images/spines/spine10.jpg" alt="Spine 10">
+    </a>
+    <a href="index10.html" class="spine spine-11">
+        <img src="assets/images/spines/spine11.jpg" alt="Spine 11">
+    </a>
+    <a href="index10.html" class="spine spine-12">
+        <img src="assets/images/spines/spine12.jpg" alt="Spine 12">
+    </a>
+    <a href="index10.html" class="spine spine-13">
+        <img src="assets/images/spines/spine13.jpg" alt="Spine 13">
+    </a>
+    <a href="index10.html" class="spine spine-14">
+        <img src="assets/images/spines/spine14.jpg" alt="Spine 14">
+    </a>
+</div>
+
+</body>
 </html>

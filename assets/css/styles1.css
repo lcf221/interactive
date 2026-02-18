@@ -1,42 +1,162 @@
-.navigation{
-    background-color: antiquewhite;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    padding: 10px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-a{
-    color: rgb(255, 163, 163);
-    font-size: 20px;
-    text-decoration: none;
-    margin-right: 10px;
+p {
+    margin: 20px;
 }
 
-a:hover{
-    background-color: rgb(249, 71, 71);
-    color: white;
-}
-
-a:active{
-    background-color: black;
-    color: red;
-}
-
-a:visited{
-    color: rgb(175, 0, 0);
-}
-
-p{
-    margin: 16px;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+/* Shelf container */
+.shelf {
+    position: relative;
+    width: 100%;
     margin: 12px auto;
 }
 
+/* Shelf image */
+.shelf img {
+    width: 100%;
+    display: block;
+}
+
+/* Clickable book areas */
+.book {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 3 books per shelf */
+.book1, .book4, .book7 {
+    left: 0%;
+    width: 33.33%;
+}
+
+.book2, .book5, .book8 {
+    left: 33.33%;
+    width: 33.33%;
+}
+
+.book3, .book6, .book9 {
+    left: 66.66%;
+    width: 33.33%;
+}
+
+/* Spine label */
+.spine-label {
+    position: absolute;
+    opacity: 0;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* Show spine label on hover */
+.book:hover .spine-label {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+
+/* Purple Shelf */
+.shelf-purple .book:hover {
+    box-shadow:
+        0 0 20px rgba(180, 120, 255, 0.9),
+        inset 0 0 20px rgba(150, 90, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+/* Yellow Shelf */
+.shelf-yellow .book:hover {
+    box-shadow:
+        0 0 20px rgba(255, 215, 100, 0.9),
+        inset 0 0 20px rgba(255, 190, 70, 0.6);
+    background-color: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+/* Red Shelf */
+.shelf-red .book:hover {
+    box-shadow:
+        0 0 20px rgba(255, 90, 90, 0.9),
+        inset 0 0 20px rgba(200, 50, 50, 0.6);
+    background-color: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+/* ===== Clickable spine overlays on the red shelf ===== */
+
+/* Use the red shelf as a clickable spine container */
+.shelf-clickable {
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+    margin: 12px auto;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.shelf-clickable > img {
+    width: 100%;
+    display: block;
+}
+
+/* All spine overlays */
+.shelf-clickable .spine {
+    display: block;
+    z-index: 5;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.shelf-clickable .spine img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hover effect for spines (subtle pop + shadow) */
+.shelf-clickable .spine:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter:
+        drop-shadow(0 0 12px rgba(0, 0, 0, 0.4))
+        drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4));
+    cursor: pointer;
+}
+
+/* POSITIONING – tweak these top/left/width values while looking in the browser */
+
+/* First spine (left-most of the three you cropped) */
+.shelf-clickable .spine-1 {
+    top: 10%;
+    left: 35%;
+    width: 5%;
+}
+
+/* Second spine */
+.shelf-clickable .spine-2 {
+    top: 10%;
+    left: 50%;
+    width: 5%;
+}
+
+/* Third spine */
+.shelf-clickable .spine-3 {
+    top: 10%;
+    left: 65%;
+    width: 5%;
+}

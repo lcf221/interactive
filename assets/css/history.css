@@ -1,0 +1,63 @@
+/* Reset */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+.bg {
+    background-image: url("../images/history.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Layout container */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Book image */
+.book-img {
+    width: clamp(160px, 25vw, 320px);
+    height: auto;
+}
+
+/* Text panel */
+.text-block {
+    max-width: 600px;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Navigation link */
+.navigation a {
+    display: inline-block;
+    margin: 15px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #b3003c;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+    body {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,27 +1,96 @@
-.listhead{
-    font-weight: 700;
-    font-size: 20px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.list{
-    font-style: italic;
-    text-transform: uppercase;
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #f4f1ea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
 }
 
-.h1{
+
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.row:hover .track {
+    animation-play-state: paused;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+}
+
+
+.top-track {
+    animation: scrollLeft 20s linear infinite;
+}
+
+
+.bottom-track {
+    animation: scrollRight 20s linear infinite;
+}
+
+
+.book {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 340px;
+    margin: 0 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+
+    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2)), #8e6ad8;
+    
+
+    box-shadow:
+        inset -6px 0 12px rgba(0,0,0,0.6),
+        0 8px 18px rgba(0,0,0,0.5);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.h2{
-    text-align: center;
+.book:hover {
+    transform: rotate(180deg) translateY(-10px) rotateY(5deg);
+    box-shadow:
+        inset -6px 0 12px rgba(0,0,0,0.7),
+        0 12px 25px rgba(0,0,0,0.7);
 }
 
-.h3{
-    text-align: center;
-    letter-spacing: 7%;
+
+.purple { background: linear-gradient(160deg, #9b7de8, #6c4ab6); }
+.yellow { background: linear-gradient(160deg, #ffe066, #d9a404); }
+.red    { background: linear-gradient(160deg, #e37b7b, #b8332a); }
+.green  { background: linear-gradient(160deg, #58c77b, #2e8b57); }
+.blue   { background: linear-gradient(160deg, #5f90ff, #1e4db7); }
+
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
-.bodytext{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 150%;
+@keyframes scrollRight {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
 }
