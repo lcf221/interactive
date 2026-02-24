@@ -1,30 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Reading Video</title>
-    <link rel="stylesheet" href="styles5.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookstore Spin Wheel</title>
+<link rel="stylesheet" href="assets/css/nav.css">
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 70px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: #2a1a2e;
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  #wheel-container {
+    position: relative;
+  }
+
+  canvas {
+    border: 5px solid #000000;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  #pointer {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #000000;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #spin-btn {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #313131;
+    transition: transform 0.2s;
+  }
+
+  #spin-btn:hover {
+    transform: scale(1.05);
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2a1a2e;
+    text-align: center;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 480px) {
+    body {
+      padding-top: 55px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+    }
+    #wheel-container {
+      transform: scale(0.72);
+      transform-origin: top center;
+      margin-bottom: -112px;
+    }
+    #spin-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+    #result {
+      font-size: 1rem;
+      padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    #wheel-container {
+      transform: scale(0.6);
+      transform-origin: top center;
+      margin-bottom: -176px;
+    }
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
 
-    <!-- VIDEO ON LEFT -->
-    <div class="video-wrapper">
-        <video id="readingVideo" src="assets/videos/reading.mp4" controls autoplay muted loop></video>
-    </div>
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
 
-    <!-- HOURGLASS ON RIGHT -->
-    <div class="hourglass-wrapper">
-        <div class="hourglass">
-            <div class="sand top"></div>
-            <div class="sand bottom"></div>
-            <div class="glass"></div>
-        </div>
-    </div>
-
+<h1>Spin the Bookstore Wheel!</h1>
+<div id="wheel-container">
+  <div id="pointer"></div>
+  <canvas id="wheel" width="400" height="400"></canvas>
 </div>
+<button id="spin-btn">SPIN!</button>
+<div id="result"></div>
+
+<script>
+const canvas = document.getElementById('wheel');
+const ctx = canvas.getContext('2d');
+const resultDiv = document.getElementById('result');
+const spinBtn = document.getElementById('spin-btn');
+
+const cssSize = 400;
+const dpr = window.devicePixelRatio || 1;
+canvas.style.width = cssSize + 'px';
+canvas.style.height = cssSize + 'px';
+canvas.width = cssSize * dpr;
+canvas.height = cssSize * dpr;
+ctx.scale(dpr, dpr);
+
+const radius = cssSize / 2;
+
+// 12 bookstores with locations
+const bookstores = [
+  { name: "Powell's City of Books", location: "Portland, OR" },
+  { name: "The Strand", location: "New York, NY" },
+  { name: "The Last Bookstore", location: "Los Angeles, CA" },
+  { name: "Barnes & Noble", location: "Multiple Locations, USA" },
+  { name: "Kinokuniya NYC", location: "New York, NY" },
+  { name: "City Lights", location: "San Francisco, CA" },
+  { name: "Elliott Bay", location: "Seattle, WA" },
+  { name: "Books & Books", location: "Miami, FL" },
+  { name: "Kramerbooks & Afterwords", location: "Washington, DC" },
+  { name: "Daedalus Books", location: "Charlottesville, VA" },
+  { name: "The Book Rack", location: "Multiple Locations, USA" },
+  { name: "Books Are Magic", location: "Brooklyn, NY" }
+];
+
+const numSegments = bookstores.length;
+const colors = ["#C9B8F0","#FFF0A8","#F5B8B8","#A8E6BE","#A8C4FF","#D4C0F0","#FFD9A0"];
+let rotation = 0;
+
+// Draw the wheel
+function drawWheel() {
+  const segmentAngle = 2 * Math.PI / numSegments;
+  for(let i=0;i<numSegments;i++){
+    ctx.beginPath();
+    ctx.moveTo(radius, radius);
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.arc(radius, radius, radius, i*segmentAngle, (i+1)*segmentAngle);
+    ctx.lineTo(radius, radius);
+    ctx.fill();
+    ctx.stroke();
+
+    // Draw text along segment
+    ctx.save();
+    ctx.translate(radius, radius);
+    ctx.rotate(i*segmentAngle + segmentAngle/2);
+    ctx.textAlign = "right";
+    ctx.fillStyle = "#000";
+    ctx.font = "bold 12px Nunito, Arial, sans-serif";
+    ctx.fillText(bookstores[i].name, radius-10, 0);
+    ctx.restore();
+  }
+}
+
+// Initial draw
+drawWheel();
+
+// Spin function
+spinBtn.addEventListener('click', () => {
+  resultDiv.textContent = "";
+  const randomSpin = Math.random()*360 + 720; // at least 2 full rotations
+  const spinTime = 4000;
+
+  const start = performance.now();
+  const initialRotation = rotation;
+  function animate(time) {
+    const elapsed = time - start;
+    const t = Math.min(elapsed / spinTime, 1);
+    rotation = initialRotation + randomSpin * easeOutCubic(t);
+    drawRotatedWheel(rotation);
+    if(t < 1){
+      requestAnimationFrame(animate);
+    } else {
+      const normalizedRotation = rotation % 360;
+      const degreesPerSegment = 360 / numSegments;
+      const winningIndex = Math.floor((360 - normalizedRotation + degreesPerSegment/2) / degreesPerSegment) % numSegments;
+      const book = bookstores[winningIndex];
+      resultDiv.textContent = `You landed on: ${book.name} (${book.location})! 🎉`;
+    }
+  }
+  requestAnimationFrame(animate);
+});
+
+function drawRotatedWheel(rot) {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.save();
+  ctx.translate(radius,radius);
+  ctx.rotate(rot * Math.PI/180);
+  ctx.translate(-radius,-radius);
+  drawWheel();
+  ctx.restore();
+}
+
+function easeOutCubic(t){
+  return (--t)*t*t+1;
+}
+</script>
 
 </body>
 </html>
-

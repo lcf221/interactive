@@ -10,7 +10,7 @@ body {
 
 /* Background */
 .bg {
-    background-image: url("../images/mystery.jpg");
+    background-image: url("../images/genre/mystery.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

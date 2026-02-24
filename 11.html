@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9/11 Series</title>
+<link rel="stylesheet" href="assets/css/font.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fef9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffefc5;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .book-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .book-info p {
+    margin: 0;
+    color: #555;
+  }
+
+  .star-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-item:hover .star-rating {
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #ffe8c8;
+    margin-top: 40px;
+  }
+
+  footer a {
+    font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star-rating {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>9/11 Series</h1>
+  <p>Stories inspired by 9/11, courage, hope, and faith in the face of tragedy.</p>
+</header>
+
+<div class="book-list">
+
+  <div class="book-item">
+    <img src="assets/images/11/91.png" alt="9/11 Book 1">
+    <div class="book-info">
+      <h2>One Tuesday Morning</h2>
+      <p>One Tuesday Morning by Karen Kingsbury is a faith-based 9/11 drama following NYC firefighter Jake Bryan, who suffers amnesia after the Twin Towers collapse. While his wife, Jamie, helps him rebuild his life and faith, a twist involves Eric Michaels, a California businessman who was in the towers and lost his memory, creating a story of redemption, love, and loss.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/11/92.png" alt="9/11 Book 2">
+    <div class="book-info">
+      <h2>Beyond Tuesday Morning</h2>
+      <p>Beyond Tuesday Morning by Karen Kingsbury is a faith-based novel set three years after the 9/11 attacks. It follows FDNY widow Jamie Bryan as she finds healing while volunteering at St. Paul's Chapel, navigating new love, and facing the brother of the man who impersonated her deceased husband.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/11/93.png" alt="9/11 Book 3">
+    <div class="book-info">
+      <h2>Remember Tuesday Morning</h2>
+      <p>Remember Tuesday Morning by Karen Kingsbury is a Christian fiction novel following Alex Brady, a man deeply scarred by his father’s death in the 9/11 attacks. Consumed by grief and a desire to fight evil, Alex works with his K9 partner, Bo, until a series of California wildfires forces him to confront his past and open his heart to love and faith again.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index7.html">← Back to Karen Kingsbury</a>
+</footer>
+
+</body>
+</html>

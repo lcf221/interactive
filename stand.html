@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standalones</title>
+<link rel="stylesheet" href="assets/css/font.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fef9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffefc5;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .book-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .book-info p {
+    margin: 0;
+    color: #555;
+  }
+
+  .star-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-item:hover .star-rating {
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #ffe8c8;
+    margin-top: 40px;
+  }
+
+  footer a {
+    font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star-rating {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Standalones</h1>
+  <p>Explore Karen Kingsbury’s Standalone novels—each a heartwarming story of faith, love, and hope.</p>
+</header>
+
+<div class="book-list">
+
+  <!-- Books 1–20 -->
+  <div class="book-item">
+    <img src="assets/images/stand/s1.png" alt="Standalone Book 1">
+    <div class="book-info">
+      <h2>Someone Like You</h2>
+      <p>Someone Like You by Karen Kingsbury is a faith-based contemporary romance (also a 2024 film) about Andi Allen, who discovers she was adopted as an embryo, revealing she has a secret twin sister. After her life is upended, she sets out to find her biological roots, leading to a journey of heartbreak, family secrets, and unexpected love.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s2.png" alt="Standalone Book 2">
+    <div class="book-info">
+      <h2>Unlocked</h2>
+      <p>Before You Take a Stand ... You Got to Take a Chance. Holden Harris is an eighteen-year-old locked in a prison of autism. Despite his quiet ways and quirky behaviors, Holden is very happy and socially normal---on the inside, in a private world all his own. In reality, he is bullied at school by kids who only see that he is very different. Ella Reynolds is part of the 'in' crowd. A cheerleader and star of the high school drama production, her life seems perfect. When she catches Holden listening to her rehearse for the school play, she is drawn to him ... the way he is drawn to the music. </p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s3.png" alt="Standalone Book 3">
+    <div class="book-info">
+      <h2>In This Moment</h2>
+      <p>Hamilton High Principal Wendell Quinn is tired of the violence, drug abuse, teen pregnancies, and low expectations at his Indianapolis school. A single father of four, Quinn is a Christian and a family man. He wants to see change in his community, so he starts a voluntary after-school Bible Study and prayer program. He knows he is risking his job by leading the program, but the high turnout at every meeting encourages him.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s4.png" alt="Standalone Book 4">
+    <div class="book-info">
+      <h2>This Side Of Heaven</h2>
+      <p>This Side of Heaven by Karen Kingsbury is a Christian fiction novel about Annie Warren, whose son Josh is disabled after a drunk driving accident and is awaiting a long-overdue insurance settlement. As Annie tries to help him, she uncovers a secret: Josh believes he has a 7-year-old daughter with a woman who claims to be the mother, a situation that threatens the settlement but reveals a deeper family treasure. The story explores themes of family, faith, and finding hope in despair, focusing on the unexpected gift Josh's situation brings to his mother. 
+      </p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s5.png" alt="Standalone Book 5">
+    <div class="book-info">
+      <h2>The Chance</h2>
+      <p>Years ago, the day before Ellie moved from Georgia to California, she and her best friend Nolan sat beneath the Spanish moss of an ancient oak tree and wrote letters to each other, sealing them in a rusty old metal box. The plan was to return eleven years later and read them in 2013, the year Nolan’s time traveling books say all the mysteries of the world will be understood.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s6.png" alt="Standalone Book 6">
+    <div class="book-info">
+      <h2>When Joy Came To Stay</h2>
+      <p>Maggie Stovall is trapped inside a person she’s spent years carefully crafting. Now the truth about who she is—and what she’s done—is bursting to the surface and sending Maggie into a spiral of despair. Will she walk away from everything, or can Maggie allow God to take her to a place of ultimate honesty—before it’s too late?</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s7.png" alt="Standalone Book 7">
+    <div class="book-info">
+      <h2>Like Dancelion Dust</h2>
+      <p>Like Dandelion Dust by Karen Kingsbury is an emotional drama about Jack and Molly Campbell, who face losing their adopted four-year-old son, Joey, when his biological father is released from prison and demands him back. The story explores the legal battle and the desperate lengths the Campbells consider to keep their family together. </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s8.png" alt="Standalone Book 8">
+    <div class="book-info">
+      <h2>Just Once</h2>
+      <p>In 1941, beautiful Irvel Holland is too focused on her secret to take much notice of the war raging overseas. She’s dating Sam but in love with his younger brother, Hank—her longtime best friend—and Irvel has no idea how to break the news. Then the unthinkable happens—Pearl Harbor is attacked. With their lives turned upside down overnight, Sam is drafted and convinces Hank to remain in Indiana, where he and Irvel take up the battle on the home front.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s9.png" alt="Standalone Book 9">
+    <div class="book-info">
+      <h2>Forgiving Paris</h2>
+      <p>Forgiving Paris is a novel by Karen Kingsbury about Ashley Baxter Blake, who returns to Paris for her anniversary, confronting a past mistake from two decades prior involving a reckless affair, an unexpected pregnancy, and a woman named Alice. The story follows Ashley as she grapples with guilt and secrets, and finds an unexpected connection with Alice, leading to a journey of healing, forgiveness, and hope. It's part of the Baxter Family series and explores themes of family, heartbreak, and redemption. </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s10.png" alt="Standalone Book 10">
+    <div class="book-info">
+      <h2>On Every Side</h2>
+      <p>After suffering the loss of his mother and separation from his sister and the girl he loved, Jordan Riley fills the holes in his soul with anger. But Faith Evans begins to disassemble the walls around Jordan ’s heart, and he realizes there’s something very familiar about her.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s11.png" alt="Standalone Book 11">
+    <div class="book-info">
+      <h2>Shades of Blue</h2>
+      <p>Shades of Blue by Karen Kingsbury is a contemporary Christian fiction novel about a successful New York ad executive, Brad Cutler, whose seemingly perfect life is upended by memories of his high school girlfriend, Emma, and a difficult choice they made years ago. Haunted by the past, he seeks forgiveness and redemption, forcing him, Emma, and his fiancée, Laura, to confront the repercussions of that single decision, exploring themes of love, forgiveness, and healing. </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s12.png" alt="Standalone Book 12">
+    <div class="book-info">
+      <h2>Divine</h2>
+      <p>Mary Madison was a child of unspeakable horrors, a young woman society wanted to forget. Now a divine power has set Mary free to bring life-changing hope and love to battered and abused women living in the shadow of the nation’s capital.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s13.png" alt="Standalone Book 13">
+    <div class="book-info">
+      <h2>Fifteen Minutes</h2>
+      <p>Zack Dylan has a dream. He wants to sing on the biggest stages, for the biggest crowds, and he’ll do whatever it takes to make it come true. But Zack also made a promise to his college sweetheart when he left Kentucky to compete on the popular TV show, Fifteen Minutes: If he made it, nothing would change him or his faith in God.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s14.png" alt="Standalone Book 14">
+    <div class="book-info">
+      <h2>Two Weeks</h2>
+      <p>Cole Blake, son of Landon and Ashley Baxter Blake, is months away from going off to college and taking the first steps towards his dream—a career in medicine. But as he starts his final semester of high school he meets Elise, a mysterious new girl who captures his attention—and heart—from day one..</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s15.png" alt="Standalone Book 15">
+    <div class="book-info">
+      <h2>Truly Madly Deeply</h2>
+      <p>Truly, Madly, Deeply is a 2020 Christian fiction novel by Karen Kingsbury, part of The Baxter Family series, focusing on the romance between 18-year-old Tommy Baxter and Annalee Miller, whose relationship is tested by her serious illness and his decision to become a police officer, prompting family conflict and a search for answers about his past. The book explores themes of faith, family, love, and loss, blending romance with drama and touching on the aftermath of 9/11. 
+      </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s16.png" alt="Standalone Book 16">
+    <div class="book-info">
+      <h2>Love Story</h2>
+      <p>From the day they met, John and Elizabeth were destined to fall in love. Their whirlwind romance started when they were young college students and lasted nearly thirty years—until Elizabeth died of cancer. So when John Baxter is asked to relive his long-ago love story with Elizabeth for his grandson Cole’s heritage project, he’s not sure he can do it. The sadness might simply be too great. But he agrees and allows his heart and soul to go places they haven’t gone in decades. Back to the breathless first moments, but also to the secret heartbreak that brought John and Elizabeth together.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s17.png" alt="Standalone Book 17">
+    <div class="book-info">
+      <h2>A Distant Shore</h2>
+      <p>A Distant Shore by Karen Kingsbury is a Christian fiction novel about an FBI agent, Jack Ryder, who reconnects with a woman, Eliza Lawrence, he saved from drowning as a teenager, leading to a high-stakes mission involving her forced marriage to a drug lord, blending romance, danger, and faith as they pretend to fall in love for the mission but risk real feelings. The story follows their reunion during a dangerous operation where their past connection and present danger force them together, exploring themes of love, redemption, and miracles. 
+      </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s18.png" alt="Standalone Book 18">
+    <div class="book-info">
+      <h2>Where Yesterday Lives</h2>
+      <p>At thirty-one, Ellen Barrett has already won a Pulitzer prize. Sadly, though, her skill as a journalist far surpasses her ability to sort out her troubled past. When she returns to picturesque Petoskey, Michigan, for her beloved father’s funeral, it’s a traumatic emotional and spiritual journey for Ellen—a rediscovery of what is truly important and eternal.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s19.png" alt="Standalone Book 19">
+    <div class="book-info">
+      <h2>Oceans Apart</h2>
+      <p>Oceans Apart by Karen Kingsbury is an inspirational story of secret sin, forgiveness, and family, focusing on airline pilot Connor Evans. His seemingly perfect life is shattered when a past affair results in a 7-year-old son, Max, entering his life after the mother dies in a plane crash. The book explores if Connor and his wife, Michele, can reconcile.</p>
+        </p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/stand/s20.png" alt="Standalone Book 20">
+    <div class="book-info">
+      <h2>When We Were Young</h2>
+      <p>DFrom their first meeting, to their stunning engagement and lavish wedding, to their happily-ever-after, Noah and Emily Carter were meant to be together. Theirs is a special kind of love and they want the world to know. More than a million adoring fans have followed their lives on Instagram since the day Noah publicly proposed to Emily. But behind the carefully staged photos and encouraging posts, their life is anything but a fairytale, and Noah’s obsession with social media has ruined everything.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index7.html">← Back to Karen Kingsbury</a>
+</footer>
+
+</body>
+</html>

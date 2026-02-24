@@ -10,7 +10,7 @@ body {
 
 /* Background */
 .bg {
-    background-image: url("../images/history.jpg");
+    background-image: url("../images/genre/grid.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

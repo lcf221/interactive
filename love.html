@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost Love Series</title>
+<link rel="stylesheet" href="assets/css/font.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fef9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffefc5;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .book-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .book-info p {
+    margin: 0;
+    color: #555;
+  }
+
+  .star-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-item:hover .star-rating {
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #ffe8c8;
+    margin-top: 40px;
+  }
+
+  footer a {
+    font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star-rating {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Lost Love Series</h1>
+  <p>Explore Karen Kingsbury’s Lost Love Series—stories of love, hope, and second chances.</p>
+</header>
+
+<div class="book-list">
+  <!-- Example Books -->
+  <div class="book-item">
+    <img src="assets/images/love/l1.png" alt="Lost Love Book 1">
+    <div class="book-info">
+      <h2>Even Now</h2>
+      <p>Even Now by Karen Kingsbury is a Christian romance novel following Lauren Gibbs, a war correspondent, and Shane Galanter, who are separated by lies and years of distance after a teen pregnancy and a faked death. The story, which features themes of faith and, for many, is, a testament to God's love, chronicles their search for redemption and reconciliation with the daughter they gave up.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/love/l2.png" alt="Lost Love Book 2">
+    <div class="book-info">
+      <h2>Even After</h2>
+      <p>Ever After by Karen Kingsbury is the moving, emotional sequel to Even Now, following Emily Anderson, who falls in love with Army reservist Justin Baker while her parents, Lauren and Shane, struggle to reconcile their opposing views on faith and the Iraq War. When tragedy strikes, they must overcome deep divisions to find hope and healing.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/love/l3.png" alt="Lost Love Book 3">
+    <div class="book-info">
+      <h2>Even Now and Even After Two In One</h2>
+      <p>Both the books in one! A bonus excerpt in the two in one book!</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <!-- Repeat as needed for all books in the series -->
+</div>
+
+<footer>
+  <a href="index7.html">← Back to Karen Kingsbury</a>
+</footer>
+
+</body>
+</html>

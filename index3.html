@@ -3,11 +3,34 @@
 <head>
     <title>Bookshelf Recommendations</title>
     <link rel="stylesheet" href="assets/css/styles3.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
 </head>
 <body>
 
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
+
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
+
     <div class="bookshelf-page">
-        <h1 class="page-title">My Bookshelf Recommendations</h1>
 
         <div class="bookshelf">
             <!-- SHELF 1 -->

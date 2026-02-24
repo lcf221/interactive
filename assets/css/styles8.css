@@ -1,37 +1,8 @@
 @keyframes color{
-    0%{ 
-        background-color: #fff7ea;
-    }
-    10%{
-        background-color: #fff6ea;
-    }
-    20%{
-        background-color: #f5ffea;
-    }
-    30%{
-        background-color: #eafff1;
-    }
-    40%{
-        background-color: #eafeff;
-    }
-    50%{
-        background-color: #eaf2ff;
-    }
-    60%{
-        background-color: #ebeaff;
-    }
-    70%{
-        background-color: #f1eaff;
-    }
-    80%{
-        background-color: #ffeafa;
-    }
-    90%{
-        background-color: #ffeaef;
-    }
-    100%{
-        background-color: #fff7ea;
-    }
+    0%   { background-color: #FFF2CD; }
+    33%  { background-color: #CEE0FC; }
+    66%  { background-color: #FFB0AA; }
+    100% { background-color: #FFF2CD; }
 }
 
 
@@ -39,9 +10,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #fff7ea;
+    background-color: #FFF2CD;
     animation-name: color;
-    animation-duration: 5s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
 }
 

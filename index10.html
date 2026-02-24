@@ -1,11 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Title</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Seuss Silly Books!</title>
+<link rel="stylesheet" href="assets/css/nav.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  h1 {
+    margin: 20px;
+    color: #2a1a2e;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .shelf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    animation: shelfWiggle 3s infinite alternate;
+  }
+
+  @keyframes shelfWiggle {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .book {
+    width: 120px;
+    height: 160px;
+    border: 4px solid #000000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    animation: bounce 2s infinite alternate;
+    color: white;
+  }
+
+  .book:hover {
+    transform: rotate(-10deg) scale(1.2);
+    filter: brightness(1.2);
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(-5deg); }
+  }
+
+  button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #CEE0FC;
+    transition: transform 0.2s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  /* Rainbow confetti */
+  .confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall 1.5s linear forwards;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(200px); opacity: 0; }
+  }
+
+  /* Dr. Seuss characters fixed at bottom */
+  .character {
+    position: fixed;
+    bottom: 0;
+    width: 120px; /* bigger characters */
+    animation: charBounce 2s infinite alternate;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  @keyframes charBounce {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(-3deg); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .character { width: 80px; }
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; margin: 60px 10px 10px; }
+    .book { width: 90px; height: 120px; font-size: 0.75rem; }
+    .character { display: none; }
+    body { padding-bottom: 20px; }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    .book { width: 75px; height: 100px; font-size: 0.65rem; }
+    button { font-size: 1rem; padding: 8px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
+
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
+
+<h1>Dr. Seuss Silly Books!</h1>
+
+<button id="addBook">Add a Silly Book!</button>
+
+<div class="shelf" id="shelf">
+</div>
+
+<script>
+const shelf = document.getElementById('shelf');
+
+const titles = [
+  "The Cat in the Hat",
+  "Green Eggs and Ham",
+  "One Fish Two Fish Red Fish Blue Fish",
+  "Hop on Pop",
+  "Fox in Socks",
+  "Oh, the Places You'll Go!",
+  "Horton Hears a Who!"
+];
+
+const colors = ["#C9B8F0","#FFF0A8","#F5B8B8","#A8E6BE","#A8C4FF","#D4C0F0","#FFD9A0"];
+
+// Rainbow confetti function
+function createConfetti(x, y) {
+  const colorsConf = ["#ff0066","#00ff99","#ffdd00","#ff99cc","#00ccff"];
+  for (let i=0;i<3;i++){
+    const confetti = document.createElement('div');
+    confetti.classList.add('confetti');
+    confetti.style.left = x + Math.random()*30 -15 + 'px';
+    confetti.style.top = y + Math.random()*30 -15 + 'px';
+    confetti.style.background = colorsConf[Math.floor(Math.random()*colorsConf.length)];
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 1500);
+  }
+}
+
+// Function to create a book
+function createBook() {
+  const randomTitle = titles[Math.floor(Math.random() * titles.length)];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const newBook = document.createElement('div');
+  newBook.classList.add('book');
+  newBook.textContent = randomTitle;
+  newBook.style.background = randomColor;
+  newBook.style.transform = `rotate(${Math.random()*20-10}deg)`;
+  shelf.appendChild(newBook);
+}
+
+// Add initial books
+for(let i=0; i<7; i++) createBook();
+
+// Add new book on button click
+document.getElementById('addBook').addEventListener('click', (e) => {
+  createBook();
+  createConfetti(e.clientX, e.clientY);
+});
+
+// Add Dr. Seuss characters fixed at bottom
+const characters = [];
+const spacing = window.innerWidth / 9; // 9 characters
+for (let i = 1; i <= 9; i++) {
+  const img = document.createElement('img');
+  img.src = `assets/images/dr/d${i}.png`;
+  img.classList.add('character');
+  img.style.left = spacing * (i - 1) + spacing/2 - 60 + 'px'; // center each 120px image
+  document.body.appendChild(img);
+}
+</script>
+
+</body>
 </html>

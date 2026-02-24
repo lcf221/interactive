@@ -1,33 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Animation 1</title>
-        <link rel="stylesheet" href="assets/css/styles6.css">
-        
-    </head>
-    <body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Favorite Author: Karen Kingsbury</title>
+<link rel="stylesheet" href="assets/css/nav.css">
+<style>
+  body {
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+  }
 
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box4"></div>
-        <div class="box5"></div>
-        <div class="box6"></div>
-        <div class="box7"></div>
-        <div class="box8"></div>
-        <div class="box9"></div>
-        <div class="box10"></div>
-        <div class="box11"></div>
-        <div class="box12"></div>
-        <div class="box13"></div>
-        <div class="box14"></div>
-        <div class="box15"></div>
-        <div class="box16"></div>
+  header {
+    text-align: center;
+    padding: 24px 20px 16px;
+    background: #FFB0AA;
+  }
 
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
 
-       
-    </body>
+  header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+  }
+
+  .author-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px 16px;
+  }
+
+  .author-section img {
+    width: 160px;
+    height: 200px;
+    border-radius: 14px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  }
+
+  .author-section p {
+    max-width: 800px;
+    text-align: center;
+    color: #444;
+    font-size: 1rem;
+  }
+
+  .series-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .series-card {
+    text-align: center;
+    background: #FFF2CD;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .series-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .series-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .series-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #CEE0FC;
+    margin-top: 40px;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .series-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .series-card {
+      width: 70%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
+
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
+
+<header>
+  <h1>My Favorite Author: Karen Kingsbury</h1>
+  <section class="author-section">
+    <img src="assets/images/baxter/karen.jpg" alt="Karen Kingsbury">
+  </section>
+</header>
+
+<div style="max-width: 800px; margin: 30px auto; padding: 0 30px; text-align: center;">
+  <p style="color: #444; font-size: 1rem; line-height: 1.7; margin: 0;">Why I Love Her Books: Karen Kingsbury writes stories that blend faith, love, and family in ways that always leave me inspired. Each series brings unforgettable characters and heartwarming moments that stay with you long after you turn the last page.</p>
+</div>
+
+<section class="series-links">
+  <a href="baxter.html" class="series-card">
+    <img src="assets/images/baxter/baxter1.webp" alt="Baxter Family Series">
+    <h3>Baxter Family Series</h3>
+  </a>
+
+  <a href="angel.html" class="series-card">
+    <img src="assets/images/angel/a1.png" alt="Angels Walking Series">
+    <h3>Angels Walking Series</h3>
+  </a>
+
+  <a href="love.html" class="series-card">
+    <img src="assets/images/love/l1.png" alt="Lost Love Series">
+    <h3>Lost Love Series</h3>
+  </a>
+
+  <a href="11.html" class="series-card">
+    <img src="assets/images/11/91.png" alt="9/11 Series">
+    <h3>9/11 Series</h3>
+  </a>
+
+  <a href="stand.html" class="series-card">
+    <img src="assets/images/stand/s1.png" alt="Standalones">
+    <h3>Standalones</h3>
+  </a>
+</section>
+
+<footer>
+  <p>Learn more about Karen Kingsbury on her <a href="https://www.karenkingsbury.com" target="_blank">official website</a>.</p>
+</footer>
+
+</body>
 </html>
-

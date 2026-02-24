@@ -1,51 +1,18 @@
 @keyframes color{
-    0%{ 
-        background-color: #fff7ea;
-    }
-    10%{
-        background-color: #fff6ea;
-    }
-    20%{
-        background-color: #f5ffea;
-    }
-    30%{
-        background-color: #eafff1;
-    }
-    40%{
-        background-color: #eafeff;
-    }
-    50%{
-        background-color: #eaf2ff;
-    }
-    60%{
-        background-color: #ebeaff;
-    }
-    70%{
-        background-color: #f1eaff;
-    }
-    80%{
-        background-color: #ffeafa;
-    }
-    90%{
-        background-color: #ffeaef;
-    }
-    100%{
-        background-color: #fff7ea;
-    }
+    0%{ background-color: #FFF2CD; }
+    33%{ background-color: #CEE0FC; }
+    66%{ background-color: #FFB0AA; }
+    100%{ background-color: #FFF2CD; }
 }
 
-
-
-
-
 body {
-    background: #d9d9d9;
+    background: #CEE0FC;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     animation-name: color;
-    animation-duration: 10s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
   }
   
@@ -68,8 +35,8 @@ body {
   }
   
   .cell {
-    background: white;
-    border: 2px solid black;
+    background: #FFF2CD;
+    border: 2px solid #3a2840;
     color: transparent;
     cursor: pointer;
     transition: 0.2s ease;
@@ -80,13 +47,45 @@ body {
   }
   
   .cell:hover {
-    background: #111;
-    color: gold;
-    box-shadow: 0 0 10px gold;
+    background: #FFB0AA;
+    color: #2a1a2e;
+    box-shadow: 0 0 10px rgba(255, 176, 170, 0.6);
   }
   
   .cell.revealed {
-    background: #111;
-    color: gold;
+    background: #CEE0FC;
+    color: #2a1a2e;
   }
-  
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 740px) {
+    body {
+      align-items: flex-start;
+      padding: 60px 10px 20px;
+      overflow-x: auto;
+      box-sizing: border-box;
+    }
+    .crossword {
+      grid-template-columns: repeat(17, 28px);
+      grid-template-rows: repeat(17, 28px);
+      gap: 1px;
+    }
+    .cell, .black {
+      width: 28px;
+      height: 28px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .crossword {
+      grid-template-columns: repeat(17, 19px);
+      grid-template-rows: repeat(17, 19px);
+      gap: 1px;
+    }
+    .cell, .black {
+      width: 19px;
+      height: 19px;
+      font-size: 8px;
+    }
+  }

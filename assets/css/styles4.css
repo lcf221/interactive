@@ -6,19 +6,30 @@
 }
 
 body {
-    height: 100vh;
-    overflow: hidden;
-    background: #f4f1ea;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #CEE0FC;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 60px;
+    justify-content: space-around;
+    padding: 60px 0 20px;
+    box-sizing: border-box;
 }
 
 
 .row {
     width: 100%;
     overflow: hidden;
+    flex-shrink: 0;
+}
+
+.shelf-plank {
+    width: 100%;
+    height: 16px;
+    background: linear-gradient(180deg, #f5e1cc, #f8dec3);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+    border-radius: 3px;
+    flex-shrink: 0;
 }
 
 
@@ -47,7 +58,7 @@ body {
     width: 140px;
     height: 340px;
     margin: 0 20px;
-    border-radius: 8px;
+    border-radius: 0%;
     color: white;
     font-weight: bold;
     letter-spacing: 2px;
@@ -78,11 +89,11 @@ body {
 }
 
 
-.purple { background: linear-gradient(160deg, #9b7de8, #6c4ab6); }
-.yellow { background: linear-gradient(160deg, #ffe066, #d9a404); }
-.red    { background: linear-gradient(160deg, #e37b7b, #b8332a); }
-.green  { background: linear-gradient(160deg, #58c77b, #2e8b57); }
-.blue   { background: linear-gradient(160deg, #5f90ff, #1e4db7); }
+.purple { background: linear-gradient(160deg, #9b7de8, #9e87cf); }
+.yellow { background: linear-gradient(160deg, #ffe066, #dabf6f); }
+.red    { background: linear-gradient(160deg, #e37b7b, #d36861); }
+.green  { background: linear-gradient(160deg, #a1eab8, #60d291); }
+.blue   { background: linear-gradient(160deg, #a4befc, #84a2e9); }
 
 
 @keyframes scrollLeft {
@@ -93,4 +104,32 @@ body {
 @keyframes scrollRight {
     from { transform: translateX(-50%); }
     to   { transform: translateX(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 50px 0 10px;
+        gap: 0;
+    }
+    .book {
+        width: 90px;
+        height: 200px;
+        margin: 0 10px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    .shelf-plank {
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book {
+        width: 65px;
+        height: 150px;
+        margin: 0 6px;
+        font-size: 0.55rem;
+        letter-spacing: 0.5px;
+    }
 }

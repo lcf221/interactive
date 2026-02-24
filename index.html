@@ -1,98 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home page</title>
-    <link rel="stylesheet" href="assets/css/styles1.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Bookshelf</title>
+<link rel="stylesheet" href="assets/css/styles1.css">
+<link rel="stylesheet" href="assets/css/nav.css">
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
 
+  body {
+    display: flex;
+    align-items: flex-end; /* keep shelf at bottom */
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #FFF3D7;
+  }
+
+  .bookshelf {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .bookshelf img {
+    height: auto;
+    width: auto;
+    display: block;
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  /* Hover effect for all books */
+  .bookshelf img:hover {
+    transform: translateY(-10px) scale(1.05);
+    filter: brightness(1.2);
+  }
+
+  /* Extra glow for clickable books */
+  .bookshelf img[data-link]:hover {
+    filter: brightness(1.4);
+    cursor: pointer;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    body {
+      overflow-x: auto;
+      overflow-y: hidden;
+      align-items: flex-end;
+    }
+    .bookshelf img {
+      max-width: 7vw;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bookshelf img {
+      max-width: 10vw;
+      height: auto;
+    }
+  }
+
+</style>
+</head>
 <body>
 
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
 
-<!-- Purple Shelf -->
-<div class="shelf shelf-purple">
-    <img src="assets/images/Purple Bookshelf.jpg" alt="Bookshelf row one">
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
 
-    <a href="index2.html" class="book book1">
-        <span class="spine-label">WELCOME</span>
-    </a>
+<div class="bookshelf" id="bookshelf">
 
-    <a href="index3.html" class="book book2">
-        <span class="spine-label">RECOMENDATIONS</span>
-    </a>
+  <!-- Red Books -->
+  <img src="assets/images/r-spines/newr8.jpg" alt="" data-link="book1.html" data-label="Book 11">
+  <img src="assets/images/r-spines/newr7.jpg" alt="" data-link="book2.html" data-label="From the Library of Abigail Cade-Page 1">
+  <img src="assets/images/r-spines/newr6.jpg" alt="" data-link="book3.html" data-label="Book 12">
+  <img src="assets/images/r-spines/newr5.jpg" alt="" data-link="book4.html" data-label="Book Recomendations-Page 3">
+  <img src="assets/images/r-spines/newr4.jpg" alt="" data-link="book5.html" data-label="Book 13">
+  <img src="assets/images/r-spines/newr3.jpg" alt="" data-link="book6.html" data-label="Book 14">
+  <img src="assets/images/r-spines/newr2.jpg" alt="" data-link="book7.html" data-label="Books At A Glance">
+  <img src="assets/images/r-spines/newr1.jpg" alt="" data-link="book8.html" data-label="Book 15">
+  <img src="assets/images/r-spines/newr9.jpg" alt="" data-link="book9.html" data-label="Book 16">
+  <img src="assets/images/r-spines/10.jpg" alt="" data-link="book10.html" data-label="Book 17">
 
-    <a href="index4.html" class="book book3">
-        <span class="spine-label">SCROLLING SHELVES</span>
-    </a>
+  <!-- Yellow Books -->
+  <img src="assets/images/y-spines/newy1.jpg" alt="" data-link="book11.html" data-label="Book 18">
+  <img src="assets/images/y-spines/y2.jpg" alt="" data-link="book12.html" data-label="Book 19">
+  <img src="assets/images/y-spines/y3.jpg" alt="" data-link="book13.html" data-label="The Bookstore Wheel">
+  <img src="assets/images/y-spines/y4.jpg" alt="" data-link="book14.html" data-label="Book 20">
+  <img src="assets/images/y-spines/y5.jpg" alt="" data-link="book15.html" data-label="Book Crossword-Page 6">
+  <img src="assets/images/y-spines/y6.jpg" alt="" data-link="book16.html" data-label="Book 21">
+  <img src="assets/images/y-spines/y7.jpg" alt="" data-link="book17.html" data-label="Karen Kingsbury">
+
+  <!-- Purple Books -->
+  <img src="assets/images/p-spines/newp1.jpg" alt="" data-link="book18.html" data-label="Book 22">
+  <img src="assets/images/p-spines/newp2.jpg" alt="" data-link="book19.html" data-label="Book 23">
+  <img src="assets/images/p-spines/newp3.jpg" alt="" data-link="book20.html" data-label="What's Your Book Taste?">
+  <img src="assets/images/p-spines/newp4.jpg" alt="" data-link="book21.html" data-label="Book 24">
+  <img src="assets/images/p-spines/newp5.jpg" alt="" data-link="book22.html" data-label="Harry Potter World">
+  <img src="assets/images/p-spines/newp6.jpg" alt="" data-link="book23.html" data-label="Book 25">
+  <img src="assets/images/p-spines/newp7.jpg" alt="" data-link="book24.html" data-label="Book 26">
+  <img src="assets/images/p-spines/newp8.jpg" alt="" data-link="book25.html" data-label="Dr.Seuss">
+  <img src="assets/images/p-spines/p9.jpg" alt="" data-link="book26.html" data-label="Book 27">
+  <img src="assets/images/p-spines/p10.jpg" alt="" data-link="book27.html" data-label="Book 28">
+  <img src="assets/images/p-spines/p11.jpg" alt="" data-link="book28.html" data-label="Book 29">
+
 </div>
 
-<!-- Yellow Shelf -->
-<div class="shelf shelf-yellow">
-    <img src="assets/images/Yellow Bookshelf.jpg" alt="Bookshelf row two">
+<script>
+  function scaleBooks() {
+    const shelf = document.getElementById("bookshelf");
+    const books = shelf.querySelectorAll("img");
+    let totalNaturalWidth = 0;
+    books.forEach(img => { totalNaturalWidth += img.naturalWidth; });
+    const scale = shelf.clientWidth / totalNaturalWidth;
+    books.forEach(img => { img.style.width = (img.naturalWidth * scale) + "px"; });
+  }
 
-    <a href="index5.html" class="book book4">
-        <span class="spine-label">TIME</span>
-    </a>
+  window.addEventListener("load", scaleBooks);
+  window.addEventListener("resize", scaleBooks);
 
-    <a href="index6.html" class="book book5">
-        <span class="spine-label">Page 6</span>
-    </a>
-
-    <a href="index7.html" class="book book6">
-        <span class="spine-label">Page 7</span>
-    </a>
-</div>
-
-<!-- Red Shelf with clickable spines -->
-<div class="shelf shelf-red shelf-clickable">
-    <!-- Base shelf image -->
-    <!-- <img src="assets/images/Red Bookshelf.jpg" alt="Bookshelf row three"> -->
-
-    <!-- Spine overlays -->
-    <a href="index8.html" class="spine spine-1">
-        <img src="assets/images/spines/spine-1.jpg" alt="Spine 1">
-    </a>
-
-    <a href="index9.html" class="spine spine-2">
-        <img src="assets/images/spines/spine-2.jpg" alt="Spine 2">
-    </a>
-
-    <a href="index10.html" class="spine spine-3">
-        <img src="assets/images/spines/spine-3.jpg" alt="Spine 3">
-    </a>
-    <a href="index10.html" class="spine spine-4">
-        <img src="assets/images/spines/spine4.jpg" alt="Spine 4">
-    </a>
-    <a href="index10.html" class="spine spine-5">
-        <img src="assets/images/spines/spine5.jpg" alt="Spine 5">
-    </a>
-    <a href="index10.html" class="spine spine-6">
-        <img src="assets/images/spines/spine6.jpg" alt="Spine 6">
-    </a>
-    <a href="index10.html" class="spine spine-7">
-        <img src="assets/images/spines/spine7.jpg" alt="Spine 7">
-    </a>
-    <a href="index10.html" class="spine spine-8">
-        <img src="assets/images/spines/spine8.jpg" alt="Spine 8">
-    </a>
-    <a href="index10.html" class="spine spine-9">
-        <img src="assets/images/spines/spine9.jpg" alt="Spine 9">
-    </a>
-    <a href="index10.html" class="spine spine-10">
-        <img src="assets/images/spines/spine10.jpg" alt="Spine 10">
-    </a>
-    <a href="index10.html" class="spine spine-11">
-        <img src="assets/images/spines/spine11.jpg" alt="Spine 11">
-    </a>
-    <a href="index10.html" class="spine spine-12">
-        <img src="assets/images/spines/spine12.jpg" alt="Spine 12">
-    </a>
-    <a href="index10.html" class="spine spine-13">
-        <img src="assets/images/spines/spine13.jpg" alt="Spine 13">
-    </a>
-    <a href="index10.html" class="spine spine-14">
-        <img src="assets/images/spines/spine14.jpg" alt="Spine 14">
-    </a>
-</div>
+  document.querySelectorAll('.bookshelf img[data-link]').forEach(img => {
+    img.addEventListener('click', () => {
+      window.location.href = img.dataset.link;
+    });
+  });
+</script>
 
 </body>
 </html>

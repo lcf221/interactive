@@ -1,11 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Title</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+<meta charset="UTF-8">
+<title>Pixel Wizard Quiz Chain</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/nav.css">
+<style>
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game { text-align: center; }
+
+.main-character-container {
+  width: 220px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.main-character-container img { width: 100%; image-rendering: pixelated; }
+
+.speech-bubble {
+  background: #ffffff;
+  color: black;
+  padding: 20px;
+  border: 4px solid black;
+  max-width: 400px;
+  min-height: 70px;
+  margin: 0 auto 25px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 10px;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 16px 16px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+}
+
+.buttons button, #nextButton {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 12px 18px;
+  margin: 10px;
+  background: #222;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.buttons button:hover, #nextButton:hover { background: white; color: black; }
+
+#nextButton { display: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 60px 10px 20px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .speech-bubble {
+    max-width: calc(100vw - 40px);
+    font-size: 8px;
+    padding: 14px;
+  }
+  .main-character-container {
+    width: 160px;
+  }
+  .buttons button, #nextButton {
+    font-size: 8px;
+    padding: 8px 10px;
+    margin: 5px 3px;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+  <a id="nav-prev" class="nav-arrow">&#8249;</a>
+  <a href="index.html" class="nav-home" title="Home">
+    <img src="assets/images/icon.webp" alt="Home">
+  </a>
+  <a id="nav-next" class="nav-arrow">&#8250;</a>
+</nav>
+
+<script>
+  (function() {
+    var pages  = ['index.html','index2.html','index3.html','index4.html','index5.html','index6.html','index7.html','index8.html','index9.html','index10.html'];
+    var labels = ['Home','Stamp Collage','Book Recommendations','Books at a Glance','Bookstore Wheel','Book Crossword','Karen Kingsbury','Your Book Genre','Harry Potter World','Dr. Seuss'];
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var idx = pages.indexOf(current);
+    var prev = document.getElementById('nav-prev');
+    var next = document.getElementById('nav-next');
+    if (idx > 0) { prev.href = pages[idx-1]; prev.title = labels[idx-1]; }
+    else prev.classList.add('nav-disabled');
+    if (idx < pages.length-1) { next.href = pages[idx+1]; next.title = labels[idx+1]; }
+    else next.classList.add('nav-disabled');
+  })();
+</script>
+
+<div class="game">
+  <div class="speech-bubble" id="speechBubble">Who should Harry talk to first?</div>
+
+  <div class="main-character-container">
+    <img id="mainCharacter" src="assets/images/hp/hp.png" alt="Pixel Character">
+  </div>
+
+  <div class="buttons" id="answerButtons">
+    <button data-character="ron">Ron</button>
+    <button data-character="herm">Hermione</button>
+    <button data-character="hagrid">Hagrid</button>
+    <button data-character="mc">McGonagall</button>
+    <button data-character="voldermort">Voldermort</button>
+    <button data-character="malfoy">Malfoy</button>
+    <button data-character="dobby">Dobby</button>
+    <button data-character="wig">Hedwig</button>
+  </div>
+
+  <button id="nextButton">Next</button>
+</div>
+
+<script>
+const mainCharacter = document.getElementById("mainCharacter");
+const speechBubble = document.getElementById("speechBubble");
+const answerButtons = document.getElementById("answerButtons");
+const nextButton = document.getElementById("nextButton");
+
+let visitedCount = 0;
+
+const characterQuotes = {
+  ron: [
+    "Why spiders? Why couldn't it be 'Follow the butterflies?'",
+    "I hate being poor.",
+    "Brilliant, but scary.",
+    "Oh, I'm so glad we know what it's called, That's a great help."
+  ],
+  herm: [
+    "Now if you two don't mind, I'm going to bed. Before you come up with another idea to get us killed. Or worse, expelled.",
+    "Just because you have the emotional range of a teaspoon.",
+    "You're saying it wrong. It's Leviosa. Not Leviosar.",
+    "It's sort of exciting isn't it? Breaking the rules."
+  ],
+  hagrid: [
+    "Thought You Were Leaving Without Saying Goodbye, Did Ya?",
+    "I Am What I Am, And I'm Not Ashamed",
+    "I Shouldn't've Said That. I Should Not Have Said That",
+    "You're A Wizard, Harry"
+  ],
+  voldermort: [
+    "I can touch you now.",
+    "Only I can live forever.",
+    "You have fought valiantly. But in vain.",
+    "There is no good and evil. There is only power, and those too weak to seek it."
+  ],
+  dobby: [
+    "Harry Potter. Such An Honor It Is, Sir!",
+    "Dobby Only Wants Harry Potter To Be Safe.",
+    "Bad Dobby! Bad Dobby!",
+    "Master Has Given Dobby A Sock. Master Has Presented Dobby With Clothes! Dobby Is Free!"
+  ],
+  mc: [
+    "I've always wanted to use that spell!",
+    "Five points will be awarded to each of you for sheer dumb luck.",
+    "Potter, take Weasley with you, he looks far too happy over there."
+  ],
+  wig: [
+    "hoot",
+    "hoot hoot",
+    "hoot hoot hoot"
+  ],
+  malfoy: [
+    "Scared, Potter?",
+    "Hogwarts. What a pathetic excuse for a school.",
+    "Famous Harry Potter.",
+    "No One Asked Your Opinion, You Filthy Little Mudblood!"
+  ]
+};
+
+const questions = [
+  "The Dark Lord is rising! Who will Harry confide in first?",
+  "A mysterious clue appears in Hogwarts. Who should help decipher it?",
+  "Someone knocked over a cauldron! Who do you seek for advice?",
+  "A magical creature is lost! Who can assist?",
+  "One last decision before returning to Harry: Who do you choose?"
+];
+
+function typeWriter(text, element, callback) {
+  element.innerHTML = "";
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 30);
+    } else if (callback) callback();
+  }
+  typing();
+}
+
+function showQuestion() {
+  if (visitedCount < questions.length) {
+    typeWriter(questions[visitedCount], speechBubble);
+    answerButtons.style.display = "block";
+    nextButton.style.display = "none";
+  } else {
+    mainCharacter.src = "assets/images/hp/hp.png";
+    typeWriter("Thanks for talking to my friends! Would you like to hear more?", speechBubble);
+    answerButtons.style.display = "none";
+    nextButton.style.display = "inline-block";
+    nextButton.textContent = "Restart"; 
+  }
+}
+
+answerButtons.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const char = btn.dataset.character;
+    const quotes = characterQuotes[char];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    mainCharacter.src = `assets/images/hp/${char}.png`;
+
+    typeWriter(randomQuote, speechBubble, () => {
+      nextButton.style.display = "inline-block";
+    });
+
+    answerButtons.style.display = "none";
+  });
+});
+
+nextButton.addEventListener("click", () => {
+  if (nextButton.textContent === "Restart") {
+    visitedCount = 0;
+    nextButton.textContent = "Next";
+    showQuestion();
+  } else {
+    visitedCount++;
+    showQuestion();
+  }
+});
+
+showQuestion();
+</script>
+
+</body>
 </html>

@@ -10,7 +10,7 @@ body {
 
 /* Background */
 .bg {
-    background-image: url("../images/hearts.jpg");
+    background-image: url("../images/genre/hearts.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

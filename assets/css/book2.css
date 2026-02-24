@@ -1,0 +1,60 @@
+/* Reset */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEE6B1;
+}
+
+/* Layout container */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/* Book image */
+.book-img {
+    width: clamp(160px, 25vw, 320px);
+    height: auto;
+    border-radius: 0px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Text panel */
+.text-block {
+    max-width: 600px;
+    background: rgba(255,255,255,0.92);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Navigation link */
+.navigation a {
+    display: inline-block;
+    margin: 15px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #b30000;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    body {
+        height: auto;
+        padding: 40px 20px;
+    }
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

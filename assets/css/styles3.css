@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f1fb;
+    background: #CEE0FC;
     color: #222;
 }
 
@@ -26,11 +26,11 @@ body {
 .bookshelf {
     width: 100%;
     max-width: 1100px;
-    background: #220c38;
-    border-radius: 24px;
+    background: #FFF2CD;
+    border-radius: 0px;
     padding: 40px 40px 50px;
     box-sizing: border-box;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -71,7 +71,7 @@ body {
     bottom: 0;
     height: 10px;
     border-radius: 999px;
-    background: linear-gradient(180deg, #c89b6b, #9d6a36);
+    background: linear-gradient(180deg, #fff6ed, #ffebd7);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -79,8 +79,7 @@ body {
     position: relative;
     width: 100%;
     max-width: 150px;
-    aspect-ratio: 3 / 4;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     cursor: pointer;
     box-shadow:
@@ -100,8 +99,8 @@ body {
 .book-info {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(15, 4, 40, 0.94), rgba(93, 41, 143, 0.94));
-    color: #fdf7ff;
+    background: linear-gradient(160deg, rgba(255, 176, 170, 0.95), rgba(206, 224, 252, 0.95));
+    color: #2a1a2e;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,12 +118,14 @@ body {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
+    color: #2a1a2e;
 }
 
 .book-info p {
     margin: 0;
     font-size: 0.8rem;
     line-height: 1.4;
+    color: #3a2840;
 }
 
 .book:hover {

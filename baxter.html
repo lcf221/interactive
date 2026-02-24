@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baxter Family Series</title>
+<link rel="stylesheet" href="assets/css/font.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fef9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffefc5;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .book-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .book-info p {
+    margin: 0;
+    color: #555;
+  }
+
+  .star-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-item:hover .star-rating {
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #ffe8c8;
+    margin-top: 40px;
+  }
+
+  footer a {
+    font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star-rating {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Baxter Family Series</h1>
+  <p>Explore the 24 heartwarming books of the Baxter family, each filled with love, faith, and unforgettable stories.</p>
+</header>
+
+<div class="book-list">
+
+  <!-- Books 1–24 -->
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter1.webp" alt="Baxter Book 1">
+    <div class="book-info">
+      <h2>The Baxters: A Prequel</h2>
+      <p>A terrible storm builds in the early morning sky over Bloomington, Indiana, as Elizabeth Baxter prepares to celebrate her daughter Kari’s wedding to Tim Jacobs. It’s supposed to be the happiest of days, but Elizabeth can’t shake a growing sense of dread. Is the storm a sign? Something bad is about to happen. Elizabeth knows it.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter2.webp" alt="Baxter Book 2">
+    <div class="book-info">
+      <h2>Redemption</h2>
+      <p>Redemption by Karen Kingsbury and Gary Smalley (Book 1 of the Baxter Family series) follows Kari Baxter Jacobs, whose life shatters when her professor husband, Tim, confesses to an affair with a student and asks for a divorce. Relying on faith, Kari fights for her marriage, believing "love is a decision". </p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter3.webp" alt="Baxter Book 3">
+    <div class="book-info">
+      <h2>Remember</h2>
+      <p>Remember (Redemption Series #2) by Karen Kingsbury is the second book in the Baxter Family/Redemption series, focusing on Ashley Baxter’s journey toward healing after a traumatic past in Paris. Haunted by her mistakes, Ashley finds hope through caring for Alzheimer's patients. The story, heavily influenced by the September 11, 2001, attacks, features Landon Blake, who fights for his life at Ground Zero while trying to win Ashley’s love.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter4.webp" alt="Baxter Book 4">
+    <div class="book-info">
+      <h2>Return</h2>
+      <p>Return (Redemption Series #3) by Karen Kingsbury is a faith-based drama focusing on Luke Baxter, who abandons his faith, family, and girlfriend, Reagan, after the 9/11 attacks. Unaware he is the father of Reagan's child, Luke faces a, spiritual crisis that threatens to tear the Baxter family apart before a shocking secret forces him to confront his choices and return to his roots.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter5.webp" alt="Baxter Book 5">
+    <div class="book-info">
+      <h2>Rejoice</h2>
+      <p>Rejoice (Redemption Series #4) by Karen Kingsbury follows Brooke Baxter West and her husband, Peter, as they struggle with a fractured marriage and face a devastating crisis when their daughter, Hayley, nearly drowns. As Peter falls into prescription drug addiction due to guilt, the Baxter family relies on faith, forgiveness, and healing to navigate profound loss.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter6.webp" alt="Baxter Book 6">
+    <div class="book-info">
+      <h2>Reunion</h2>
+      <p>Reunion (2004) is the emotional fifth and final book in Karen Kingsbury’s Redemption Series, centering on the beloved Baxter family. While planning a major family gathering, the family is rocked by a deadly cancer diagnosis for Elizabeth Baxter. The story focuses on faith, secrets, and finding hope in God amidst profound sorrow.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter7.webp" alt="Baxter Book 7">
+    <div class="book-info">
+      <h2>Fame</h2>
+      <p>Fame by Karen Kingsbury is the first book in the Firstborn series, following Hollywood actor Dayne Matthews as he navigates the pressures of fame while discovering his connection to the Indiana-based Baxter family. Concurrently, Katy Hart, director of Christian Kids Theater, is offered a role in Dayne's new film, forcing her to confront her past.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter8.webp" alt="Baxter Book 8">
+    <div class="book-info">
+      <h2>Forgiven</h2>
+      <p>Forgiven (2005),follows actor Dayne Matthews as he processes shocking revelations about his past, seeking to find forgiveness and his biological family. Simultaneously, Katy Hart manages a tragic loss at her Christian theater camp, while John Baxter navigates a complicated family secret, exploring themes of grace, faith, and redemption.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter9.webp" alt="Baxter Book 9">
+    <div class="book-info">
+      <h2>Found</h2>
+      <p>Found by Karen Kingsbury is the emotional third book in the Firstborn series, focusing on John Baxter’s quest to fulfill his dying wife's wish to find their firstborn son. As Dayne Matthews questions his life and faith, a dramatic, faith-filled story unfolds, involving a romantic storyline with Katy Hart and a perilous tornado in Bloomington.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter10.webp" alt="Baxter Book 10">
+    <div class="book-info">
+      <h2>Family</h2>
+      <p>Family by Karen Kingsbury (Firstborn Series, #4) follows John Baxter’s emotional journey to reconcile with his long-lost firstborn son while his other children, specifically Ashley, navigate personal crises. Amidst a Hollywood trial, Dayne Matthews and Katy Hart face intense pressure, and the family is tested to find strength in faith and unity.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter11.webp" alt="Baxter Book 11">
+    <div class="book-info">
+      <h2>Forever</h2>
+      <p>In Karen Kingsbury's Forever (Firstborn Series #5), Katy Hart and Hollywood star Dayne Matthews face a tragic car accident just as they are planning their wedding. The Baxter family rallies together in Los Angeles to support them, navigating intense paparazzi, Luke Baxter's internal struggles, and a fight for Dayne's life and recovery.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter12.webp" alt="Baxter Book 12">
+    <div class="book-info">
+      <h2>Sunrise</h2>
+      <p>Sunrise, the first book in Karen Kingsbury's Sunrise Series (part of the Baxter Family Drama), follows Dayne and Katy Matthews as they navigate married life, fame, and a secret wedding. Amidst, John Baxter finds new love, and the Flanigan family struggles with a troubled boarder, centering on themes of faith, redemption, and new beginnings.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter13.webp" alt="Baxter Book 13">
+    <div class="book-info">
+      <h2>Summer</h2>
+      <p>Summer by Karen Kingsbury (Sunrise Series, Book 2) follows the Baxter family through a challenging season of faith, featuring Ashley and Kari navigating high-risk pregnancies, while Dayne and Katy Matthews face marital strain during a movie production. Concurrently, Cody Coleman leaves the Flanigan family to join the Army, marking a significant transition.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter14.webp" alt="Baxter Book 14">
+    <div class="book-info">
+      <h2>Someday</h2>
+      <p>Someday (Sunrise Series, Book 3) by Karen Kingsbury follows the Baxter family navigating intense personal trials, including John Baxter contemplating selling the family home and coping with loss. The story focuses on Dayne and Katy Matthews handling celebrity pressures and rumors of infidelity, while Ashley and Landon face the tragic, short life of their baby.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter15.webp" alt="Baxter Book 15">
+    <div class="book-info">
+      <h2>Sunset</h2>
+      <p>Sunset, the final book in Karen Kingsbury’s Sunrise Series (#14 in the Baxter Family series), centers on John Baxter’s remarriage to Elaine, bringing the family together through emotional trials and new beginnings.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter16.webp" alt="Baxter Book 16">
+    <div class="book-info">
+      <h2>Take One</h2>
+      <p>Take One by Karen Kingsbury (Above the Line Series, Book 1) follows filmmakers Chase Ryan and Keith Ellison as they leave the mission field in Indonesia to create a faith-based film in Hollywood. As they face financial, production, and personal challenges, they must fight to keep their, mission-driven,, "above the line" project from falling apart.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter17.webp" alt="Baxter Book 17">
+    <div class="book-info">
+      <h2>Take Two</h2>
+      <p>ake Two by Karen Kingsbury (Above the Line Series #2) follows Christian filmmakers Chase Ryan and Keith Ellison as their Hollywood careers take off. As they chase success, they face intense pressure, strained marriages, and the moral dangers of Tinsel Town, while Keith's daughter, Andi, makes risky choices.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter18.webp" alt="Baxter Book 18">
+    <div class="book-info">
+      <h2>Take Three</h2>
+      <p>Take Three (2010), the third book in Karen Kingsbury's Above the Line series, follows filmmakers Chase Ryan and Keith Ellison as they celebrate their first successful movie. While chasing Hollywood dreams, they face personal crises: Chase leaves the production, and Keith’s daughter, Andi, faces dangerous life-altering consequences, while Bailey Flanigan navigates romance with Cody Coleman.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter19.webp" alt="Baxter Book 19">
+    <div class="book-info">
+      <h2>Take Four</h2>
+      <p>Take Four (2010) by Karen Kingsbury is the final book in the Above the Line series, focusing on filmmakers Keith Ellison and Dayne Matthews as they navigate Hollywood to create faith-based films. The story follows the duo as they sign a top actor for their movie, only for him to plunge into a public scandal.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter20.webp" alt="Baxter Book 20">
+    <div class="book-info">
+      <h2>Leaving</h2>
+      <p>Leaving, the first book in Karen Kingsbury’s Bailey Flanigan series, follows aspiring actress Bailey Flanigan as she leaves her Bloomington, IN home to pursue a Broadway career in New York. She navigates auditions and romance while heartbroken over the sudden, unexplained disappearance of her ex-boyfriend, Cody Coleman.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter21.webp" alt="Baxter Book 21">
+    <div class="book-info">
+      <h2>Learning</h2>
+      <p>Learning by Karen Kingsbury a contemporary Christian romance following Bailey's journey on Broadway while navigating a painful separation from Cody Coleman. As Bailey pursues acting in New York and Cody mentors football players in Indiana, both face personal, professional, and emotional trials, leading them to learn significant life lessons about faith, love, and trusting God.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter22.webp" alt="Baxter Book 22">
+    <div class="book-info">
+      <h2>Longing</h2>
+      <p>Longing by Karen Kingsbury follows Bailey as she navigates a long silence from Cody Coleman, turning instead to Hollywood co-star Brandon Paul for comfort. As she develops new feelings in New York, Cody finds closeness with someone else in his small town, yet both struggle with intense, lasting longing for each other.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter23.webp" alt="Baxter Book 23">
+    <div class="book-info">
+      <h2>Loving</h2>
+      <p>Loving by Karen Kingsbury is the fourth and final installment in the Bailey Flanigan series, following Bailey as she navigates her blossoming Broadway career and a critical love triangle. Torn between her first love, Cody Coleman, and actor Brandon Paul, Bailey seeks faith-based guidance to make a life-defining decision regarding her heart and future.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/baxter/baxter24.webp" alt="Baxter Book 24">
+    <div class="book-info">
+      <h2>In This Moment</h2>
+      <p>In This Moment by Karen Kingsbury is a Baxter Family novel focusing on Hamilton High principal Wendell Quinn, who starts a voluntary after-school Bible study ("Raise the Bar") to combat rising violence and low morale. The program thrives, but a lawsuit over religious freedom threatens his job and the school's turnaround.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index7.html">← Back to Karen Kingsbury</a>
+</footer>
+
+</body>
+</html>

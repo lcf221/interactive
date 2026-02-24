@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angels Walking Series</title>
+<link rel="stylesheet" href="assets/css/font.css">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #fef9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #ffefc5;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .book-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  }
+
+  .book-item img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+  }
+
+  .book-info p {
+    margin: 0;
+    color: #555;
+  }
+
+  .star-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: gold;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .book-item:hover .star-rating {
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    background: #ffe8c8;
+    margin-top: 40px;
+  }
+
+  footer a {
+    font-weight: bold;
+    color: #b30000;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star-rating {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Angels Walking Series</h1>
+  <p>Follow the inspiring stories of hope, faith, and love in the Angels Walking Series.</p>
+</header>
+
+<div class="book-list">
+
+  <div class="book-item">
+    <img src="assets/images/angel/a3.png" alt="Angels Walking Book 3">
+    <div class="book-info">
+      <h2>Angels Walking</h2>
+      <p>Angels Walking by Karen Kingsbury follows Tyler Ames, a former baseball star whose career ends with a career-ending injury, leaving him broken and lost. Through a series of divine interventions and the quiet guidance of angels, Tyler finds purpose while working at a retirement home, befriending a resident with Alzheimer's, and fighting to win back his lost love, Sami.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/angel/a2.png" alt="Angels Walking Book 2">
+    <div class="book-info">
+      <h2>Chasing Sunsets</h2>
+      <p>Chasing Sunsets by Karen Kingsbury, the second book in the Angels Walking series, follows Mary Catherine, a young woman with a heart condition who volunteers in Los Angeles and falls for former baseball player Marcus Dillinger. Despite their romance and a divine mission to ensure a future child's birth, Mary Catherine faces a life-altering medical prognosis that forces her to reconsider her future.</p>
+    </div>
+    <div class="star-rating">★★★★☆</div>
+  </div>
+
+  <div class="book-item">
+    <img src="assets/images/angel/a1.png" alt="Angels Walking Book 1">
+    <div class="book-info">
+      <h2>Brush of Wings</h2>
+      <p>Brush of Wings by Karen Kingsbury is the emotional third and final book in the Angels Walking series, following Mary Catherine, a young woman with a severe heart condition who moves to Uganda to work at an orphanage against medical advice. While dealing with her health crisis, she separates from her love interest, MLB player Marcus Dillinger. The story, which features heavy themes of divine intervention, focuses on the angels working to protect her and bring her back for lifesaving care.</p>
+    </div>
+    <div class="star-rating">★★★★★</div>
+  </div>
+
+
+
+</div>
+
+<footer>
+  <a href="index7.html">← Back to Karen Kingsbury</a>
+</footer>
+
+</body>
+</html>

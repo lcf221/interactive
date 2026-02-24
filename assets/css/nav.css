@@ -1,0 +1,116 @@
+/* ===== GLOBAL FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===== ANIMATED BACKGROUND ===== */
+@keyframes siteBackground {
+  0%   { background-color: #FFF2CD; }
+  33%  { background-color: #CEE0FC; }
+  66%  { background-color: #FFB0AA; }
+  100% { background-color: #FFF2CD; }
+}
+
+body {
+  animation: siteBackground 10s ease-in-out infinite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+body, p, li, td, label, input, select, button, a {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== PAGE NAVIGATION ===== */
+
+.page-nav {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 999px;
+  padding: 5px 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 250, 224, 0.6);
+}
+
+.nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #444;
+  font-size: 22px;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  user-select: none;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #111;
+  transform: scale(1.15);
+}
+
+.nav-disabled {
+  color: #bbb;
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  transition: transform 0.2s, filter 0.2s;
+  margin: 0 2px;
+}
+
+.nav-home img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-home:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.4rem, 5vw, 2.5rem); }
+  h2 { font-size: clamp(1.1rem, 4vw, 2rem); }
+  h3 { font-size: clamp(1rem, 3.5vw, 1.5rem); }
+
+  .page-nav {
+    padding: 6px 10px;
+  }
+  .nav-arrow {
+    width: 34px;
+    height: 34px;
+  }
+  .nav-home {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.2rem, 6vw, 2rem); }
+  h2 { font-size: clamp(1rem, 5vw, 1.6rem); }
+}

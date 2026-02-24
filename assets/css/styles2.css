@@ -6,21 +6,14 @@
   
   body {
     overflow: hidden;
-    background: #f3f0eb;
-    animation-name: color;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    background: #CEE0FC;
   }
   
   .collage {
     position: relative;
     width: 100vw;
     height: 100vh;
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        transform: translate(5%, -7%);
-      
+    transform: translate(5%, -7%);
   }
   
   /* Base stamp style */
@@ -67,45 +60,12 @@
   .s16 { top: 48%;  left: 55%; transform: rotate(16deg); }
   .s17 { top: 70%;  left: 25%; transform: rotate(-11deg); }
   .s18 { top: 72%;  left: 60%; transform: rotate(13deg); }
-  
 
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .stamp { width: 160px; }
+  }
 
-
-
-
-  @keyframes color{
-    0%{ 
-        background-color: #fff7ea;
-    }
-    10%{
-        background-color: #fff6ea;
-    }
-    20%{
-        background-color: #f5ffea;
-    }
-    30%{
-        background-color: #eafff1;
-    }
-    40%{
-        background-color: #eafeff;
-    }
-    50%{
-        background-color: #eaf2ff;
-    }
-    60%{
-        background-color: #ebeaff;
-    }
-    70%{
-        background-color: #f1eaff;
-    }
-    80%{
-        background-color: #ffeafa;
-    }
-    90%{
-        background-color: #ffeaef;
-    }
-    100%{
-        background-color: #fff7ea;
-    }
-}
-
+  @media (max-width: 400px) {
+    .stamp { width: 120px; }
+  }
