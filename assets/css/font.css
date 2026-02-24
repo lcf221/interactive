@@ -8,6 +8,7 @@
 }
 
 body {
+  background-color: #FFF2CD;
   animation: siteBackground 10s ease-in-out infinite;
 }
 
