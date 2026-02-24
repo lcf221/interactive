@@ -200,12 +200,16 @@ const questions = [
   "One last decision before returning to Harry: Who do you choose?"
 ];
 
+let typingToken = 0;
+
 function typeWriter(text, element, callback) {
-  element.innerHTML = "";
+  const myToken = ++typingToken;
+  element.textContent = "";
   let i = 0;
   function typing() {
+    if (myToken !== typingToken) return; // a newer call started — stop this one
     if (i < text.length) {
-      element.innerHTML += text.charAt(i);
+      element.textContent += text.charAt(i);
       i++;
       setTimeout(typing, 30);
     } else if (callback) callback();
